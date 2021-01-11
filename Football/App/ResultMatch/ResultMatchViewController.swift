@@ -45,8 +45,6 @@ extension ResultMatchViewController {
     
 extension ResultMatchViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print("aaaaaaaaa",dataMatch!["leagues"] as! [[String : Any]])
-//        let listLeague : [[String : Any]] = dataMatch["leagues"] as! [[String; (Any).self;]]
         return 2
     }
     
