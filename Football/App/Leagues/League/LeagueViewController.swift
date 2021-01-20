@@ -98,5 +98,9 @@ extension LeagueViewController {
         self.navigationController?.pushViewController(vc!, animated: true)
         vc?.seo = dataLeague[indexPath.row].seo
         vc?.idLeague = dataLeague[indexPath.row].idLeague
+        vc?.name = dataLeague[indexPath.row].name
+        vc?.icon = dataLeague[indexPath.row].icon
     }
+    
+    
 }

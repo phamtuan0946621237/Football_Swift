@@ -9,6 +9,11 @@ import UIKit
 
 class ListResultMatchTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var awayTeam: UILabel!
+    @IBOutlet weak var iconAwayTeam: UIImageView!
+    @IBOutlet weak var iconHomeTeam: UIImageView!
+    @IBOutlet weak var homeTeam: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

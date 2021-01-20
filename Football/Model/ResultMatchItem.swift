@@ -8,24 +8,21 @@
 import Foundation
 class ResultMatch {
     var leagues : [ResultMatchItem]?
-    var date : String?
-//    var userSettings : String?
 }
 class ResultMatchItem {
     var ccode : String?
     var idMatch : Int?
     var primaryId : Int?
     var name : String?
-    var matches : [[String : Any]]?
-//        [ResultMatchHomeTeamItem]?
+    var matches : [ResultMatchHomeTeamItem]?
 }
 class ResultMatchHomeTeamItem {
     var idHometeam : Int?
     var leagueId : Int?
-    var home : [String : Any]?
-    var away : [String : Any]?
+    var home : InfoTeam?
+    var away : InfoTeam?
     var tournamentStage : String?
-    var status : [String : Any]?
+    var status : StatusItemResultMatch?
     var timeTS : Int?
     var statusId : Int?
 }
@@ -41,10 +38,11 @@ class StatusItemResultMatch {
     var cancelled : Bool?
     var scoreStr : String?
     var startDateStr : String?
-    var reason : [String : String]?
+    var reason : ResonMatchesItem?
+    var startTimeStr : String?
 }
 
-class resonType {
+class ResonMatchesItem {
     var short : String?
     var long : String?
 }

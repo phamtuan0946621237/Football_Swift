@@ -10,6 +10,7 @@ import Alamofire
 
 class Connect {
     var url = "https://www.fotmob.com/"
+    var urlSeason = "https://fotmobenetpulse.s3-external-3.amazonaws.com/"
     typealias ResCallback = (_ data : [String : Any]?) -> Void
     var callBack : ResCallback?
     
@@ -31,4 +32,20 @@ class Connect {
             }
         }
     }
+    
+    func fetchGetLeague(endPoint : String,parram : [String: Any]?) {
+        AF.request(urlSeason + endPoint,method: .get,parameters: parram , encoding: URLEncoding.default,headers: nil,interceptor: nil).responseJSON { (response) in
+            if let jsonObj = response.value as? [String : Any] {
+                                self.callBack?(jsonObj as? [String : Any] )
+            }
+        }
+    }
+    func getListStatsLeague(url : String) {
+        AF.request(url,method: .get,parameters: nil , encoding: URLEncoding.default,headers: nil,interceptor: nil).responseJSON { (response) in
+            if let jsonObj = response.value as? [String : Any] {
+                self.callBack?(jsonObj as? [String : Any] )
+            }
+        }
+    }
+    
 }

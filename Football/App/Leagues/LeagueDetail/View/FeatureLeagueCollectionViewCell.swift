@@ -11,4 +11,5 @@ class FeatureLeagueCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var titleFeature: UILabel!
     
+    @IBOutlet weak var layoutView: UIView!
 }
