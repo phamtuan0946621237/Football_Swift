@@ -20,7 +20,7 @@ class LeagueDetailViewController: UIViewController,UICollectionViewDelegate,UICo
     var idLeague : Int?
     var name : String?
     var icon : String?
-    var dataFeature = ["TABLE","MATCHES","STARS","NEWS"]
+    var dataFeature = ["TABLE","MATCHES","STARS","NEWS","TRANSFERS"]
     let loadingView = ModalViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +81,12 @@ extension LeagueDetailViewController {
         }
         if(selectedIndex == 3 ) {
             let vc = storyboard?.instantiateViewController(withIdentifier: "NewsViewController") as? NewsViewController
+            self.navigationController?.pushViewController(vc!, animated: true)
+            vc?.idLeague = self.idLeague
+            vc?.seo = self.seo
+        }
+        if(selectedIndex == 4 ) {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "TransfersViewController") as? TransfersViewController
             self.navigationController?.pushViewController(vc!, animated: true)
             vc?.idLeague = self.idLeague
             vc?.seo = self.seo

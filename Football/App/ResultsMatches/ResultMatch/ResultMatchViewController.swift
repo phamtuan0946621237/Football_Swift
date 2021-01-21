@@ -201,6 +201,13 @@ extension ResultMatchViewController {
         view.addSubview(titleLabel)
         return view
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ResultMatchDetailViewController") as?
+            ResultMatchDetailViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+        vc?.idMatch = dataMatch[indexPath.section].matches![indexPath.row].idHometeam
+    }
+    
     
 }
 //get Date

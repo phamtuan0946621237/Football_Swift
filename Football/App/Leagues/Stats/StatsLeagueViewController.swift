@@ -60,7 +60,7 @@ extension StatsLeagueViewController {
         let tableCellData = sectionData?.topThree![indexPath.row]
         cell!.name.text = tableCellData?.name
 
-        cell!.stt.text =  selectedSegmentIndex == 0 ? String(format: "%d", tableCellData?.value ?? "hello") : nil
+        cell!.stt.text =  ""
         if selectedSegmentIndex == 0 {
             cell?.icon.sd_setImage(with: URL(string: "https://images.fotmob.com/image_resources/playerimages/\(String(tableCellData!.idPlayer!)).png"), completed: nil)
         }else {

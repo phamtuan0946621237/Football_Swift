@@ -9,7 +9,9 @@ import UIKit
 
 class InfoPlayerViewController: UIViewController {
 //    var hellooId : Int?
+    @IBOutlet weak var layoutViewFooter: UIView!
     @IBOutlet weak var namePlayer: UILabel!
+    var dataInfoPlayer : InfoPlayerItemObj?
 //    @IBOutlet weak var infoLeague: UIView!
     @IBOutlet weak var fotmobRatinView: UILabel!
     @IBOutlet weak var marketValuePlayer: UILabel!
@@ -20,6 +22,7 @@ class InfoPlayerViewController: UIViewController {
     @IBOutlet weak var heightPlayer: UILabel!
     @IBOutlet weak var infoDataView: UIView!
     var dataObj : InfoPlayerItemObj? = nil
+    var idPlayer : Int?
 //    let datafff = UserPlayerViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,26 +30,29 @@ class InfoPlayerViewController: UIViewController {
         infoDataView.layer.borderColor = UIColor.systemGray6.cgColor
         infoDataView.layer.cornerRadius = 16
         fotmobRatinView.layer.cornerRadius = 4
-        namePlayer.text = "hello"
+//        namePlayer.text = "hello"
         marketValuePlayer.text = "€ 125M"
         shirtPlayer.text = "11"
         countryPlayer.text = "EGY"
         agePLayer.text = "28"
         preferredFootPlayer.text = "Left"
         heightPlayer.text = "175 cm"
-        
-        
-//        fetchDataUserPlayer(id: <#T##Int#>)
-        // Do any additional setup after loading the view.
+//        getData()
     }
     func getData(data : InfoPlayerItemObj) {
-            print("dataxxxxxx",data)
+//        print("teamName",data.origin?.teamName)
+        print("primaryPosition",data.relatedNews![0].title)
+//        fetchDataUserPlayer(id : id)
 //        let concurrentQueue = DispatchQueue(label: "swiftlee.concurrent.queue", attributes: .concurrent)
 //        concurrentQueue.async {
-//            self.dataObj = data
+            self.dataObj = data
 //            DispatchQueue.main.async { [self] in
 //                namePlayer.text = self.dataObj?.name
 //            }
 //        }
     }
+}
+
+extension InfoPlayerViewController {
+    
 }

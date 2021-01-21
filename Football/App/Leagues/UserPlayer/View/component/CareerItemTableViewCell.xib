@@ -102,6 +102,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="date" destination="fqp-gP-6MJ" id="Zmm-2c-UcO"/>
+                <outlet property="numberGoal" destination="kCz-hF-VXU" id="TmL-Yl-efW"/>
+                <outlet property="numberMatch" destination="z3d-px-N69" id="WSZ-t2-wQK"/>
+                <outlet property="team" destination="mG2-JA-i03" id="6dx-Su-TY8"/>
+                <outlet property="teamIcon" destination="AKy-1O-tnI" id="VUT-14-sCY"/>
+            </connections>
             <point key="canvasLocation" x="111.59420289855073" y="53.571428571428569"/>
         </tableViewCell>
     </objects>

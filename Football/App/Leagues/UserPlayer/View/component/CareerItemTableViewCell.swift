@@ -9,6 +9,11 @@ import UIKit
 
 class CareerItemTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var teamIcon: UIImageView!
+    @IBOutlet weak var numberGoal: UILabel!
+    @IBOutlet weak var numberMatch: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var team: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -9,12 +9,27 @@ import UIKit
 
 class CareerPlayerViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     // variable
+    let infoPlayer = InfoPlayerViewController()
     @IBOutlet weak var tableView: UITableView!
+    var dataObj : InfoPlayerItemObj? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CareerItemTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "CareerItemTableViewCell")
+        print("jjjjjjjj",infoPlayer.dataInfoPlayer?.name)
+    }
+    func getData(data : InfoPlayerItemObj) {
+//        print("teamName",data.origin?.teamName)
+        print("career_ tot;e",data.relatedNews![0].title)
+//        fetchDataUserPlayer(id : id)
+//        let concurrentQueue = DispatchQueue(label: "swiftlee.concurrent.queue", attributes: .concurrent)
+//        concurrentQueue.async {
+            self.dataObj = data
+//            DispatchQueue.main.async { [self] in
+//                namePlayer.text = self.dataObj?.name
+//            }
+//        }
     }
 }
 

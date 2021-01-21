@@ -9,6 +9,10 @@ import UIKit
 
 class NewsPlayerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var content: UILabel!
+    @IBOutlet weak var sourceIcon: UIImageView!
+    @IBOutlet weak var sourceStr: UILabel!
+    @IBOutlet weak var imageUrlNews: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
