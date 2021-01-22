@@ -21,7 +21,15 @@ class UserPlayerViewController: UIViewController {
     // main
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchDataUserPlayer(id: idPlayer!) // call API
+        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        infoUser = mainStoryboard.instantiateViewController(identifier: "InfoPlayerViewController")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let id = idPlayer {
+            fetchDataUserPlayer(id: id) // call API
+        }
+        
     }
 }
 

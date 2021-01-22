@@ -46,6 +46,7 @@ class InfoPlayerViewController: UIViewController {
 //        let concurrentQueue = DispatchQueue(label: "swiftlee.concurrent.queue", attributes: .concurrent)
 //        concurrentQueue.async {
             self.dataObj = data
+        namePlayer.text = data.origin?.teamName
 //            DispatchQueue.main.async { [self] in
 //                namePlayer.text = self.dataObj?.name
 //            }
