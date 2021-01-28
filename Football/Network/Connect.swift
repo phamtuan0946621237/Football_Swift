@@ -54,5 +54,12 @@ class Connect {
             }
         }
     }
+    func fetchSearch(parram : [String : Any]?) {
+        AF.request("https://apigw.fotmob.com/searchapi/suggest",method: .get,parameters: parram , encoding: URLEncoding.default,headers: nil,interceptor: nil).responseJSON { (response) in
+            if let jsonObj = response.value as? [String : Any] {
+                self.callBack?(jsonObj as? [String : Any] )
+            }
+        }
+    }
     
 }
