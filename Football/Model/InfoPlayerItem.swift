@@ -14,7 +14,20 @@ class InfoPlayerItemObj {
     var playerProps : [InfoPlayerDataItem]?
     var careerItems : CareerInfoPlayer?
     var relatedNews : [NewsItem]?
+    var lastLeague : LastLeagueInfoPlayerItem?
 }
+
+class LastLeagueInfoPlayerItem  {
+    var leagueId : Int?
+    var leagueName : String?
+    var playerProps : [playerPropsLastLeagueInfoPlayer]?
+}
+
+class playerPropsLastLeagueInfoPlayer {
+    var value : String?
+    var title : String?
+}
+
 class OriginInfoPlayer {
     var teamName : String?
     var teamId : Int?
@@ -25,7 +38,7 @@ class PositionDescInfoPlayer {
     var primaryPosition : String?
 }
 class InfoPlayerDataItem {
-    var value : String?
+    var value : Any?
     var title : String?
 }
 class CareerInfoPlayer {

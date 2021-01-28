@@ -1,23 +1,24 @@
 //
-//  NewsPlayerTableViewCell.swift
+//  WorldNewsTableViewCell.swift
 //  Football
 //
-//  Created by admin on 1/20/21.
+//  Created by admin on 1/22/21.
 //
 
 import UIKit
 
-class NewsPlayerTableViewCell: UITableViewCell {
+class WorldNewsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var layoutView: UIView!
+    @IBOutlet weak var nameSource: UILabel!
     @IBOutlet weak var content: UILabel!
-    @IBOutlet weak var sourceIcon: UIImageView!
-    @IBOutlet weak var sourceStr: UILabel!
-    @IBOutlet weak var imageUrlNews: UIImageView!
+    @IBOutlet weak var imageUrl: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-//        imageUrlNews.layer.cornerRadius = 16
+        imageUrl.layer.cornerRadius = 16
         layoutView.layer.cornerRadius = 16
+        layoutView.layer.cornerRadius = 16
+        
         layoutView.layer.shadowColor = UIColor.systemGray4.cgColor
         layoutView.layer.shadowOpacity = 1
         layoutView.layer.shadowOffset = .zero

@@ -23,7 +23,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTU-Z3-9cm">
                                 <rect key="frame" x="16" y="16" width="288" height="250"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="peq-eL-zhh">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="peq-eL-zhh">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="170"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="170" id="FYK-Mu-EZS"/>
@@ -71,7 +71,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="266" id="CXN-BG-wVa"/>
                             <constraint firstItem="yTU-Z3-9cm" firstAttribute="top" secondItem="fyh-zx-eHV" secondAttribute="top" constant="16" id="d1p-jJ-c02"/>
@@ -92,6 +92,7 @@
             <connections>
                 <outlet property="content" destination="evs-rK-VtW" id="YXh-kV-DlM"/>
                 <outlet property="imageUrlNews" destination="peq-eL-zhh" id="wB3-ZZ-4oH"/>
+                <outlet property="layoutView" destination="yTU-Z3-9cm" id="pdN-Ga-S16"/>
                 <outlet property="sourceIcon" destination="NCZ-B8-jbF" id="CvI-lL-jfc"/>
                 <outlet property="sourceStr" destination="cdL-oa-f1M" id="7Q3-7b-Cwl"/>
             </connections>
@@ -101,9 +102,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

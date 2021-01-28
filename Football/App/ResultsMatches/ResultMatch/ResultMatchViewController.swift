@@ -10,7 +10,7 @@ import Loading
 class ResultMatchViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     // variable
     var dataMatch : [ResultMatchItem] = []
-    
+
     let datePicker = UIDatePicker()
     let dateFormatter = DateFormatter()
     let height : CGFloat = 250

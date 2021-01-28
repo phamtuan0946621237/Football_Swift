@@ -10,18 +10,13 @@ import UIKit
 class ResultMatchDetailViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     @IBOutlet weak var timematch: UILabel!
     var idMatch : Int?
+//    @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var nameAwayTeam: UILabel!
     @IBOutlet weak var iconAwayTeam: UIImageView!
     @IBOutlet weak var resultMatch: UILabel!
     @IBOutlet weak var nameHomeTeam: UILabel!
     @IBOutlet weak var iconHomeTeam: UIImageView!
-    @IBOutlet weak var first: UIView!
-    @IBOutlet weak var third: UIView!
-    @IBOutlet weak var second: UIView!
-    @IBOutlet weak var four: UIView!
-    @IBOutlet weak var six: UIView!
-    @IBOutlet weak var five: UIView!
-    @IBOutlet weak var seven: UIView!
+
     @IBOutlet weak var collectionView: UICollectionView!
     var loadingView = ModalViewController()
     var dataMatchesDetail : MatchesDetailItem!
@@ -34,6 +29,9 @@ class ResultMatchDetailViewController: UIViewController,UICollectionViewDelegate
         collectionView.showsHorizontalScrollIndicator = false
         dataAPI(id : idMatch!)
         loadingView.showLoading()
+//        let view =
+//        viewContainer
+        
         // Do any additional setup after loading the view.
     }
 
@@ -66,66 +64,69 @@ extension ResultMatchDetailViewController {
         collectionView.reloadData()
         switch indexPath.row {
         case 0:
-            first.alpha = 0
-            second.alpha = 0
-            third.alpha = 0
-            four.alpha = 0
-            five.alpha = 0
-            six.alpha = 0
-            seven.alpha = 1
+            
+//            first.alpha = 0
+//            second.alpha = 0
+//            third.alpha = 0
+//            four.alpha = 0
+//            five.alpha = 0
+//            six.alpha = 0
+//            seven.alpha = 1
             break;
         case 1:
-            first.alpha = 1
-            second.alpha = 0
-            third.alpha = 0
-            four.alpha = 0
-            five.alpha = 0
-            six.alpha = 0
-            seven.alpha = 0
+//            first.alpha = 1
+//            second.alpha = 0
+//            third.alpha = 0
+//            four.alpha = 0
+//            five.alpha = 0
+//            six.alpha = 0
+//            seven.alpha = 0
+            
             break;
         case 2:
-            first.alpha = 0
-            second.alpha = 1
-            third.alpha = 0
-            four.alpha = 0
-            five.alpha = 0
-            six.alpha = 0
-            seven.alpha = 0
+//            first.alpha = 0
+//            second.alpha = 1
+//            third.alpha = 0
+//            four.alpha = 0
+//            five.alpha = 0
+//            six.alpha = 0
+//            seven.alpha = 0
             break;
         case 3:
-            first.alpha = 0
-            second.alpha = 0
-            third.alpha = 1
-            four.alpha = 0
-            five.alpha = 0
-            six.alpha = 0
-            seven.alpha = 0
+//            first.alpha = 0
+//            second.alpha = 0
+//            third.alpha = 1
+//            four.alpha = 0
+//            five.alpha = 0
+//            six.alpha = 0
+//            seven.alpha = 0
             break;
         case 4:
-            first.alpha = 0
-            second.alpha = 0
-            third.alpha = 0
-            four.alpha = 0
-            five.alpha = 1
-            six.alpha = 0
-            seven.alpha = 0
+//            first.alpha = 0
+//            second.alpha = 0
+//            third.alpha = 0
+//            four.alpha = 0
+//            five.alpha = 1
+//            six.alpha = 0
+//            seven.alpha = 0
             break;
         case 5:
-            first.alpha = 0
-            second.alpha = 0
-            third.alpha = 0
-            four.alpha = 0
-            five.alpha = 0
-            six.alpha = 1
-            seven.alpha = 0
+//            first.alpha = 0
+//            second.alpha = 0
+//            third.alpha = 0
+//            four.alpha = 0
+//            five.alpha = 0
+//            six.alpha = 1
+//            seven.alpha = 0
+            break;
         case 6:
-            first.alpha = 0
-            second.alpha = 0
-            third.alpha = 0
-            four.alpha = 1
-            five.alpha = 0
-            six.alpha = 0
-            seven.alpha = 0
+//            first.alpha = 0
+//            second.alpha = 0
+//            third.alpha = 0
+//            four.alpha = 1
+//            five.alpha = 0
+//            six.alpha = 0
+//            seven.alpha = 0
             break;
         default:
             break;
@@ -197,9 +198,10 @@ extension ResultMatchDetailViewController {
                         self!.resultMatch.text = self!.dataMatchesDetail.header?.status?.startTimeStr
                         self!.timematch.text = self!.dataMatchesDetail.header?.status?.startDateStr
                     }
+                    print("helloooo Image",self!.dataMatchesDetail.header?.teams![1].imageUrl)
+//                    self!.iconHomeTeam.sd_setImage(with: URL(string: "https://www.fotmob.com/images/team/8657_small"), completed: nil)
+////                    self!.iconHomeTeam.image = UIImage(named: "https://www.fotmob.com/images/team/8657_small")
                     
-//                    self!.iconHomeTeam.sd_setImage(with: URL(string: "https://www.fotmob.com/images/team/9879_small"), completed: nil)
-//                    self!.iconAwayTeam.sd_setImage(with: URL(string: "https://www.fotmob.com\(self!.dataMatchesDetail.header?.teams![1].imageUrl)"), completed: nil)
                     
                         
                     
