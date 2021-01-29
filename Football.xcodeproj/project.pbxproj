@@ -73,6 +73,8 @@
 		847EB68425C4188400F76C27 /* StatsMatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847EB68325C4188400F76C27 /* StatsMatchDetailViewController.swift */; };
 		847EB68A25C4194A00F76C27 /* ListStatsMatchDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847EB68825C4194A00F76C27 /* ListStatsMatchDetailTableViewCell.swift */; };
 		847EB68B25C4194A00F76C27 /* ListStatsMatchDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847EB68925C4194A00F76C27 /* ListStatsMatchDetailTableViewCell.xib */; };
+		847EB6A125C4988400F76C27 /* YoutubeMatchFacts.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847EB6A025C4988400F76C27 /* YoutubeMatchFacts.xib */; };
+		847EB6A925C499F500F76C27 /* YoutubeMatchFacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847EB6A825C499F500F76C27 /* YoutubeMatchFacts.swift */; };
 		84E6CB1C25B7DAF200E58607 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6CB1B25B7DAF200E58607 /* NewsViewController.swift */; };
 		84E6CB2625B7DE2D00E58607 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6CB2425B7DE2D00E58607 /* NewsTableViewCell.swift */; };
 		84E6CB2725B7DE2D00E58607 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E6CB2525B7DE2D00E58607 /* NewsTableViewCell.xib */; };
@@ -198,6 +200,8 @@
 		847EB68325C4188400F76C27 /* StatsMatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsMatchDetailViewController.swift; sourceTree = "<group>"; };
 		847EB68825C4194A00F76C27 /* ListStatsMatchDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStatsMatchDetailTableViewCell.swift; sourceTree = "<group>"; };
 		847EB68925C4194A00F76C27 /* ListStatsMatchDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListStatsMatchDetailTableViewCell.xib; sourceTree = "<group>"; };
+		847EB6A025C4988400F76C27 /* YoutubeMatchFacts.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YoutubeMatchFacts.xib; sourceTree = "<group>"; };
+		847EB6A825C499F500F76C27 /* YoutubeMatchFacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeMatchFacts.swift; sourceTree = "<group>"; };
 		84E6CB1B25B7DAF200E58607 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		84E6CB2425B7DE2D00E58607 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		84E6CB2525B7DE2D00E58607 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
@@ -561,6 +565,15 @@
 			path = component;
 			sourceTree = "<group>";
 		};
+		847EB68F25C4980400F76C27 /* MatchFacts */ = {
+			isa = PBXGroup;
+			children = (
+				847EB6A025C4988400F76C27 /* YoutubeMatchFacts.xib */,
+				847EB6A825C499F500F76C27 /* YoutubeMatchFacts.swift */,
+			);
+			path = MatchFacts;
+			sourceTree = "<group>";
+		};
 		84E6CB1A25B7DAE200E58607 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -665,6 +678,7 @@
 		84E6CBA425B97F7F00E58607 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				847EB68F25C4980400F76C27 /* MatchFacts */,
 				847EB64D25C3F45700F76C27 /* Component */,
 				847EB64825C3F3F700F76C27 /* FeatureMatchesDetailCollectionViewCell.swift */,
 			);
@@ -828,6 +842,7 @@
 				84E6CB6F25B84EAC00E58607 /* football.png in Resources */,
 				84392E2425AC32AC00066C8E /* ListResultMatchTableViewCell.xib in Resources */,
 				847EB67425C410BF00F76C27 /* ListLiveTickerTableViewCell.xib in Resources */,
+				847EB6A125C4988400F76C27 /* YoutubeMatchFacts.xib in Resources */,
 				84392F0D25B74B8B00066C8E /* ModalViewController.xib in Resources */,
 				84392E1325AC0D2500066C8E /* schedule_football.png in Resources */,
 				84392DD925AC06E900066C8E /* Assets.xcassets in Resources */,
@@ -972,6 +987,7 @@
 				847EB64925C3F3F700F76C27 /* FeatureMatchesDetailCollectionViewCell.swift in Sources */,
 				84E6CB7525B84F5100E58607 /* NewsPlayerTableViewCell.swift in Sources */,
 				84E6CBAE25B9933E00E58607 /* MatchesDetailItem.swift in Sources */,
+				847EB6A925C499F500F76C27 /* YoutubeMatchFacts.swift in Sources */,
 				847EB5DD25C01E2C00F76C27 /* PhamtuanRight.swift in Sources */,
 				84392EA125B175A500066C8E /* StatsTableViewCell.swift in Sources */,
 				84392DD725AC06E600066C8E /* Football.xcdatamodeld in Sources */,

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YoutubeMatchFacts" customModule="Football" customModuleProvider="target">
+            <connections>
+                <outlet property="image" destination="WZe-4P-CU6" id="8m6-3w-CTW"/>
+                <outlet property="url" destination="lvC-4E-Pkd" id="26y-je-utJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rza-jf-akZ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WZe-4P-CU6">
+                            <rect key="frame" x="16" y="35" width="240" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="240" id="27w-aA-Q9K"/>
+                                <constraint firstAttribute="height" constant="150" id="h39-6z-zb8"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Official highlights" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hM3-MQ-8WN">
+                            <rect key="frame" x="272" y="52" width="126" height="38.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.youtube.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvC-4E-Pkd">
+                            <rect key="frame" x="272" y="106.5" width="126" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="bSM-uu-jtP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="lvC-4E-Pkd" secondAttribute="trailing" constant="16" id="3Uh-P6-O6K"/>
+                        <constraint firstItem="WZe-4P-CU6" firstAttribute="leading" secondItem="rza-jf-akZ" secondAttribute="leading" constant="16" id="6l4-zA-6SF"/>
+                        <constraint firstItem="hM3-MQ-8WN" firstAttribute="top" secondItem="rza-jf-akZ" secondAttribute="top" constant="52" id="EX1-zd-3z7"/>
+                        <constraint firstAttribute="height" constant="220" id="FMP-2K-cU3"/>
+                        <constraint firstItem="WZe-4P-CU6" firstAttribute="centerY" secondItem="rza-jf-akZ" secondAttribute="centerY" id="K61-GW-JYQ"/>
+                        <constraint firstItem="hM3-MQ-8WN" firstAttribute="leading" secondItem="WZe-4P-CU6" secondAttribute="trailing" constant="16" id="a7D-IL-uLr"/>
+                        <constraint firstItem="lvC-4E-Pkd" firstAttribute="leading" secondItem="WZe-4P-CU6" secondAttribute="trailing" constant="16" id="gzb-Sv-GtQ"/>
+                        <constraint firstItem="lvC-4E-Pkd" firstAttribute="top" secondItem="hM3-MQ-8WN" secondAttribute="bottom" constant="16" id="oQ4-DS-QVv"/>
+                        <constraint firstAttribute="trailing" secondItem="hM3-MQ-8WN" secondAttribute="trailing" constant="16" id="ybC-bC-M0Z"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="rza-jf-akZ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="R6D-Es-PjA"/>
+                <constraint firstItem="rza-jf-akZ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="qoI-04-MtN"/>
+                <constraint firstItem="rza-jf-akZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rJf-B4-VCU"/>
+                <constraint firstItem="rza-jf-akZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ysH-Ev-w1x"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="111.59420289855073" y="-108.48214285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="logo.jpg" width="1365" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

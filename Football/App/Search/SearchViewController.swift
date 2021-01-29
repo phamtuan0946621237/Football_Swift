@@ -233,12 +233,8 @@ extension SearchViewController {
                 default :
                     break;
                 }
-                    
             }
         }
-        
-        
-
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         if dataArr.count > 0 {
@@ -247,3 +243,4 @@ extension SearchViewController {
         return 0
     }
 }
+

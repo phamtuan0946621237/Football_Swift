@@ -217,3 +217,4 @@ extension ResultMatchDetailViewController {
         }
     }
 }
+
