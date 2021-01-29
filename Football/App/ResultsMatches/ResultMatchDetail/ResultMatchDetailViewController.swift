@@ -17,9 +17,19 @@ class ResultMatchDetailViewController: UIViewController,UICollectionViewDelegate
     @IBOutlet weak var nameHomeTeam: UILabel!
     @IBOutlet weak var iconHomeTeam: UIImageView!
 
+    @IBOutlet weak var firstView: UIView!
+    @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var thirdView: UIView!
+    @IBOutlet weak var fourView: UIView!
+    @IBOutlet weak var fiveView: UIView!
+    @IBOutlet weak var sixView: UIView!
+    
+    @IBOutlet weak var sevenView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     var loadingView = ModalViewController()
     var dataMatchesDetail : MatchesDetailItem!
+    
+//    var MatchFactsDetailView : MatchFactsDetailView!
 //    let data = ["match fats","process","live ticker","stats","lineup","table","head to head"]
     var selectedIndexFeature : Int? = 0
     
@@ -29,10 +39,7 @@ class ResultMatchDetailViewController: UIViewController,UICollectionViewDelegate
         collectionView.showsHorizontalScrollIndicator = false
         dataAPI(id : idMatch!)
         loadingView.showLoading()
-//        let view =
-//        viewContainer
         
-        // Do any additional setup after loading the view.
     }
 
 }
@@ -62,74 +69,72 @@ extension ResultMatchDetailViewController {
         
         selectedIndexFeature = indexPath.row
         collectionView.reloadData()
-        switch indexPath.row {
-        case 0:
-            
-//            first.alpha = 0
-//            second.alpha = 0
-//            third.alpha = 0
-//            four.alpha = 0
-//            five.alpha = 0
-//            six.alpha = 0
-//            seven.alpha = 1
+        switch self.dataMatchesDetail.nav![indexPath.row] {
+        case "match facts" :
+            firstView.alpha = 0
+            secondView.alpha = 0
+            thirdView.alpha = 0
+            fourView.alpha = 0
+            fiveView.alpha = 0
+            sixView.alpha = 0
+            sevenView.alpha = 1
             break;
-        case 1:
-//            first.alpha = 1
-//            second.alpha = 0
-//            third.alpha = 0
-//            four.alpha = 0
-//            five.alpha = 0
-//            six.alpha = 0
-//            seven.alpha = 0
-            
+        case "live ticker" :
+            firstView.alpha = 0
+            secondView.alpha = 1
+            thirdView.alpha = 0
+            fourView.alpha = 0
+            fiveView.alpha = 0
+            sixView.alpha = 0
+            sevenView.alpha = 0
             break;
-        case 2:
-//            first.alpha = 0
-//            second.alpha = 1
-//            third.alpha = 0
-//            four.alpha = 0
-//            five.alpha = 0
-//            six.alpha = 0
-//            seven.alpha = 0
+        case "stats" :
+            secondView.alpha = 0
+            firstView.alpha = 0
+            thirdView.alpha = 1
+            fourView.alpha = 0
+            fiveView.alpha = 0
+            sixView.alpha = 0
+            sevenView.alpha = 0
             break;
-        case 3:
-//            first.alpha = 0
-//            second.alpha = 0
-//            third.alpha = 1
-//            four.alpha = 0
-//            five.alpha = 0
-//            six.alpha = 0
-//            seven.alpha = 0
+        case "lineup" :
+            secondView.alpha = 0
+            firstView.alpha = 0
+            thirdView.alpha = 0
+            fourView.alpha = 1
+            fiveView.alpha = 0
+            sixView.alpha = 0
+            sevenView.alpha = 0
             break;
-        case 4:
-//            first.alpha = 0
-//            second.alpha = 0
-//            third.alpha = 0
-//            four.alpha = 0
-//            five.alpha = 1
-//            six.alpha = 0
-//            seven.alpha = 0
+        case "table" :
+            secondView.alpha = 0
+            firstView.alpha = 0
+            thirdView.alpha = 0
+            fourView.alpha = 0
+            fiveView.alpha = 1
+            sixView.alpha = 0
+            sevenView.alpha = 0
             break;
-        case 5:
-//            first.alpha = 0
-//            second.alpha = 0
-//            third.alpha = 0
-//            four.alpha = 0
-//            five.alpha = 0
-//            six.alpha = 1
-//            seven.alpha = 0
+        case "head to head" :
+            secondView.alpha = 0
+            firstView.alpha = 0
+            thirdView.alpha = 0
+            fourView.alpha = 0
+            fiveView.alpha = 0
+            sixView.alpha = 1
+            sevenView.alpha = 0
             break;
-        case 6:
-//            first.alpha = 0
-//            second.alpha = 0
-//            third.alpha = 0
-//            four.alpha = 1
-//            five.alpha = 0
-//            six.alpha = 0
-//            seven.alpha = 0
+        case "process" :
+            firstView.alpha = 1
+            secondView.alpha = 0
+            thirdView.alpha = 0
+            fourView.alpha = 0
+            fiveView.alpha = 0
+            sixView.alpha = 0
+            sevenView.alpha = 0
             break;
         default:
-            break;
+            break
         }
      }
     

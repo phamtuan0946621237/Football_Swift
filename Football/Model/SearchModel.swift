@@ -18,6 +18,7 @@ class SearchModelItem {
     var textSearch : String?
     var offset : Int?
     var length : Int?
+    var key : String?
     var options : [OptionSearchModelItem]?
 }
 class OptionSearchModelItem {
