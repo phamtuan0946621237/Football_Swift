@@ -210,7 +210,7 @@ extension ListStatsFilterViewController {
     
     func fetchListStatsLeague(url : String) {
         let service = Connect()
-        service.getListStatsLeague(url : url)
+        service.getAPIUrl(url : url)
         service.completionHandler {
             [weak self] (data) in
             if(data != nil) {

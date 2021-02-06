@@ -1,13 +1,13 @@
 //
-//  MatchFactsViewController.swift
+//  StatsResultMatchDetailViewController.swift
 //  Football
 //
-//  Created by admin on 1/29/21.
+//  Created by admin on 1/30/21.
 //
 
 import UIKit
 
-class MatchFactsViewController: UIViewController {
+class StatsResultMatchDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

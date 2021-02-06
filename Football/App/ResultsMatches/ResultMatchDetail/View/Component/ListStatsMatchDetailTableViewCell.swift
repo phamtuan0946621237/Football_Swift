@@ -9,8 +9,12 @@ import UIKit
 
 class ListStatsMatchDetailTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var infoAway: UILabel!
+    @IBOutlet weak var titleInfo: UILabel!
+    @IBOutlet weak var infoHome: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 

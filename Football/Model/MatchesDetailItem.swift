@@ -29,6 +29,25 @@ class LivetickerContentMatchesDetailItem {
     var teams : [String]?
 }
 
+class LiveTickerData {
+    var HometeamId : Int?
+    var AwayteamId : Int?
+    var Events : [EventLiveTickerData]?
+}
+class EventLiveTickerData {
+    var IncidentCode : String?
+    var Elapsed : Int?
+    var Description : String?
+    var Players : [PlayersEventLiveTickerData]?
+    var HometeamEvent : Bool?
+    var ElapsedPlus : Int?
+}
+class PlayersEventLiveTickerData {
+    var idPlayer : Int?
+    var Name : String?
+    var TeamId : Int?
+}
+
 // -------------------------------
 // table
 class TableContentMatchesDetailItem {
@@ -43,16 +62,17 @@ class StatsContentMatchesDetailItem {
     var teamColors : TeamColorsStatsContentMatchesDetailItem?
 }
 class StatsOfStatsContentMatchesDetailItem {
-    var title : String?
+    var titleType : String?
     var stats : [StastArrContentMatchesDetailItem]?
 }
 
 class StastArrContentMatchesDetailItem {
     var highlighted : String?
-    var stats : [Int]?
-    var title : String?
+    var stats : [String]?
+    var titleChild : String?
     var type : String?
 }
+
 class TeamColorsStatsContentMatchesDetailItem {
     var away : String?
     var home : String?
@@ -66,14 +86,21 @@ class LineupContentMatchesDetailItem {
 
 // -------------------------------
 // HeadToHead
+
 class HeadToHeadContentMatchesDetailItem {
-    var matches : [MatchesHeadToHeadContentMatchesDetailItem]?
+    var matches : [MatchHeadToHeadContentMatchesDetailItem]?
     var summary : [Int]?
+}
+class MatchHeadToHeadContentMatchesDetailItem {
+//    var matches : [MatchesHeadToHeadContentMatchesDetailItem]?
+//    var summary : [Int]?
     var finished : Bool?
     var matchUrl : String?
     var league : LeagueHeadToHeadContentMatchesDetailItem?
     var home : InfoHeadToHeadContentMatchesDetailItem?
     var away : InfoHeadToHeadContentMatchesDetailItem?
+    var time : String?
+    var status : StatusItemResultMatch?
 }
 class InfoHeadToHeadContentMatchesDetailItem {
     var idTeam : String?
@@ -85,10 +112,10 @@ class LeagueHeadToHeadContentMatchesDetailItem {
 }
 
 
-class MatchesHeadToHeadContentMatchesDetailItem {
-    var time : String?
-    var status : StatusItemResultMatch?
-}
+//class MatchesHeadToHeadContentMatchesDetailItem {
+//    var time : String?
+//    var status : StatusItemResultMatch?
+//}
 
 // -------------------------------
 // Match Facts
@@ -112,7 +139,7 @@ class PlayerOfTheMatchMatchFactsContentMatchesDetailItem {
     
 }
 class RatingPlayerOfTheMatchMatchFactsContentMatchesDetailItem {
-    var num : Double?
+    var num : String?
 }
 class NamePlayerOfTheMatchMatchFactsContentMatchesDetailItem {
     var firstName : String?
