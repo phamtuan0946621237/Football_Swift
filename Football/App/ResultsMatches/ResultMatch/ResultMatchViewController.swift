@@ -22,6 +22,33 @@ class ResultMatchViewController: UIViewController,UITableViewDelegate,UITableVie
     // life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+//        /teams/9773/overview/fc-porto
+//        let str1 = "/teams/9773/overview/fc-porto"
+//        let str = str1[str1.startIndex..<str1.index(str1.startIndex, offsetBy: 5)]
+////        let end = str1.index(str1.endIndex, offsetBy: 5)
+//        print("hhhhhhhhh",str)
+//        // "Hello"
+//        if let range: Range<String.Index> = str.range(of: "/overview") {
+//            let index: Int = str.distance(from: str.startIndex, to: range.lowerBound)
+//            print("index: ", index) //index: 2
+////            let str = "Hello Swift!"
+//
+//        }
+//        else {
+//            print("substring not found")
+//        }
+        
+        
+//        var str = "ddddplay play play"
+//        var range = str.startIndex(of: "play")
+//        print("helloo1",range?.lowerBound)
+//        print("helloo2",range?.upperBound)
+         
+//        str.index(of: "play")      // 7
+//        str.endIndex(of: "play")   // 11
+//        str.indexes(of: "play")    // [7, 19, 31]
+        
+        
         // set tableview
         tableView.dataSource = self
         tableView.delegate = self

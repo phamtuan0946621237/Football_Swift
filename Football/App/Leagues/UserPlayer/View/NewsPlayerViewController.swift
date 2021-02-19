@@ -30,7 +30,6 @@ class NewsPlayerViewController: UIViewController,UITableViewDelegate,UITableView
 extension NewsPlayerViewController {
     func getData(data : [NewsItem]) {
         dataNewsPlayer = data
-        print("datassssss : ",data)
         tableView.reloadData()
     }
 }

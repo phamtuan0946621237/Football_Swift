@@ -279,12 +279,13 @@
                 <outlet property="fromClub" destination="qoB-Hl-Edc" id="ZSk-eR-gOr"/>
                 <outlet property="fromDate" destination="7jz-d7-qeB" id="y2w-gv-79f"/>
                 <outlet property="icon" destination="vn6-9l-qsc" id="nC9-3O-hcQ"/>
-                <outlet property="iconFromClub" destination="qbK-yj-rj9" id="bR8-L8-Vsi"/>
-                <outlet property="iconToClub" destination="qbK-yj-rj9" id="I4R-MN-aVV"/>
+                <outlet property="iconFromClub" destination="9wV-lM-o2Y" id="Ube-vp-qKS"/>
+                <outlet property="iconToClub" destination="qbK-yj-rj9" id="icI-WK-dtg"/>
                 <outlet property="layoutItem" destination="zSd-TW-He4" id="gn7-ug-xno"/>
                 <outlet property="marketValue" destination="AaZ-wQ-UYm" id="aWO-jC-itl"/>
                 <outlet property="name" destination="Mud-1I-ZqB" id="ToA-Je-lKn"/>
                 <outlet property="toClub" destination="mIh-PX-S5t" id="WnO-wl-5Ud"/>
+                <outlet property="toClubView" destination="0qF-1S-UAW" id="kL1-WU-onu"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="64.955357142857139"/>
         </tableViewCell>

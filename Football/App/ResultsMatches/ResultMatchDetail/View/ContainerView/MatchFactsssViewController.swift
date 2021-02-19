@@ -9,6 +9,7 @@ import UIKit
 import SafariServices
 
 class MatchFactsssViewController: UIViewController {
+    //variable
     @IBOutlet weak var stadium: UILabel!
     @IBOutlet weak var youtubeView: YoutubeMatchFactsUIView!
     @IBOutlet weak var star: UILabel!
@@ -18,24 +19,37 @@ class MatchFactsssViewController: UIViewController {
     @IBOutlet weak var tourbanebt: UILabel!
     @IBOutlet weak var matchDate: UILabel!
     @IBOutlet weak var iconPlayer: UIImageView!
-    
     @IBOutlet weak var viewPlayerStar: UIView!
+    
+    
+//    @IBOutlet weak var viewHomeTeam: UIView!
+//    @IBOutlet weak var viewAwayTeam: UIView!
     var dataMatchFacts : MatchFactsContentMatchesDetailItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
-    @objc func checkAction(sender : UITapGestureRecognizer) {
-        print("helloooooo")
+    // action
+    @objc func handleYoutube() {
         let vc = SFSafariViewController(url: URL(string: (dataMatchFacts?.highlights?.url)!)!)
         present(vc, animated: true)
-        // Do what you want
     }
     
+    @objc func handlePlayerStar() {
+        print("handlePlayerStar")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "UserPlayerViewController") as?
+            UserPlayerViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+        vc?.idPlayer = dataMatchFacts!.playerOfTheMatch?.idPlayerOfTheMatch
+    }
+}
+
+
+// call API
+extension MatchFactsssViewController {
     func getApi(data : MatchFactsContentMatchesDetailItem) {
         dataMatchFacts = data
-//        print("dataMatchFacts",dataMatchFacts!.events?.events![0].nameStr)
         if dataMatchFacts?.playerOfTheMatch == nil {
             youtubeView.isHidden = true
             viewPlayerStar.isHidden = true
@@ -55,20 +69,17 @@ class MatchFactsssViewController: UIViewController {
             }else {
                 youtubeView.isHidden = true
             }
-            
         }
-           
-
-        
         self.matchDate.text = dataMatchFacts?.infoBox?.matchDate
         self.stadium.text = dataMatchFacts?.infoBox?.Stadium?.name
         self.tourbanebt.text = dataMatchFacts?.infoBox?.Tournament?.textTournament
         
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
-        self.youtubeView.addGestureRecognizer(gesture)
+        // action
+        let handleYoutube = UITapGestureRecognizer(target: self, action:  #selector(self.handleYoutube))
+        self.youtubeView.addGestureRecognizer(handleYoutube)
+        
+        let handlePlayer = UITapGestureRecognizer(target: self, action:  #selector(self.handlePlayerStar))
+        self.viewPlayerStar.addGestureRecognizer(handlePlayer)
+        
     }
-    
-}
-extension MatchFactsssViewController {
-    
 }

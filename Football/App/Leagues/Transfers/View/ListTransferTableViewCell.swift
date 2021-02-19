@@ -9,9 +9,12 @@ import UIKit
 
 class ListTransferTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var layoutItem: UIView!
     @IBOutlet weak var iconToClub: UIImageView!
     @IBOutlet weak var iconFromClub: UIImageView!
+    @IBOutlet weak var layoutItem: UIView!
+//    @IBOutlet weak var iconToClub: UIImageView!
+    @IBOutlet weak var toClubView: UIView!
+//    @IBOutlet weak var iconFromClub: UIImageView!
     @IBOutlet weak var fee: UILabel!
     @IBOutlet weak var toClub: UILabel!
     @IBOutlet weak var fromDate: UILabel!

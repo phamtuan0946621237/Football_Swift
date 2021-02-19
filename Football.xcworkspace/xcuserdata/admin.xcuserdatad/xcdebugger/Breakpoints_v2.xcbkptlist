@@ -20,5 +20,113 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EC478018-8615-451A-95A4-923180EF9BC9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Football/App/Team/TeamViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "TeamViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "EC478018-8615-451A-95A4-923180EF9BC9 - b100d2483df56d9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Football.TeamViewController.detailDataTeam.getter : Swift.Optional&lt;Football.DetailTeamModelItemData&gt;"
+                  moduleName = "Football"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/Football_Swift/Football/App/Team/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "EC478018-8615-451A-95A4-923180EF9BC9 - 3710b5ea017254c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Football.TeamViewController.detailDataTeam.setter : Swift.Optional&lt;Football.DetailTeamModelItemData&gt;"
+                  moduleName = "Football"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/Football_Swift/Football/App/Team/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "EC478018-8615-451A-95A4-923180EF9BC9 - dc1298a6dbf11578"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Football.TeamViewController.detailDataTeam.modify : Swift.Optional&lt;Football.DetailTeamModelItemData&gt;"
+                  moduleName = "Football"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/Football_Swift/Football/App/Team/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "EC478018-8615-451A-95A4-923180EF9BC9 - 571157a5e41f7ae6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Football.TeamViewController.detailDataTeam.modify : Swift.Optional&lt;Football.DetailTeamModelItemData&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Football"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/Football_Swift/Football/App/Team/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "EC478018-8615-451A-95A4-923180EF9BC9 - c89ba7716f9ba936"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Football.TeamViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Football.TeamViewController"
+                  moduleName = "Football"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/Football_Swift/Football/App/Team/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "911">
+               </Location>
+               <Location
+                  uuid = "EC478018-8615-451A-95A4-923180EF9BC9 - db9471806204fecc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Football.TeamViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Football.TeamViewController&gt;"
+                  moduleName = "Football"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/Football_Swift/Football/App/Team/TeamViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "852">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

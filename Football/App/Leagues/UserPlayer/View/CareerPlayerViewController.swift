@@ -35,7 +35,7 @@ extension CareerPlayerViewController {
     func getData(data : CareerInfoPlayer) {
         dataCareerArr.append(data.nationalteam!)
         dataCareerArr.append(data.senior!)
-        print("dataCareerArr",dataCareerArr)
+        
         tableView.reloadData()
     }
 }

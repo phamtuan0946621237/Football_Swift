@@ -35,3 +35,35 @@ class PayloadOptionSearchModelItem {
     var awayName : String?
     var countryCode : String?
 }
+
+
+class TeamModelItemData {
+    var tabs : [String]?
+    var details : DetailTeamModelItemData?
+}
+class DetailTeamModelItemData {
+    var idTeam : Int?
+    var type : String?
+    var name : String?
+    var country : String?
+}
+
+class FixTuresDataModel {
+    var away : AwayFixturesModel?
+    var home : HomeFixturesModel?
+    var idMatch : Int?
+    var notStarted : Bool?
+    var pageUrl : String?
+    var status : StatusItemResultMatch?
+}
+class AwayFixturesModel {
+    var idAway : Int?
+    var name : String?
+    var score : Int?
+}
+
+class HomeFixturesModel {
+    var idHome : Int?
+    var name : String?
+    var score : Int?
+}

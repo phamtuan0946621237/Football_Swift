@@ -20,4 +20,11 @@ class TransferItem {
     var toClubId : Int?
     var toDate : String?
     var transferDate : String?
+    var typeTransfers : String?
 }
+
+class TransfersModel {
+    var  title : String?
+    var data : [TransferItem]?
+}
+

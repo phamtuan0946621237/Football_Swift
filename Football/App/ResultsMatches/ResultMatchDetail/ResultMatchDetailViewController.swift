@@ -25,6 +25,8 @@ class ResultMatchDetailViewController: UIViewController,UICollectionViewDelegate
     @IBOutlet weak var sevenView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var viewAwayTeam: UIView!
+    @IBOutlet weak var viewHomeTeam: UIView!
     var loadingView = ModalViewController()
     var dataMatchesDetail : MatchesDetailItem!
     var selectedIndexFeature : Int? = 0
@@ -33,11 +35,36 @@ class ResultMatchDetailViewController: UIViewController,UICollectionViewDelegate
     
     // life cycle
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
         collectionView.showsHorizontalScrollIndicator = false // view
         dataAPI(id : idMatch!) // get API
         loadingView.showLoading() // show loading
+        
+        // action
+        let onClickHomeTeam = UITapGestureRecognizer(target: self, action:  #selector(handleHomeTeam))
+        self.viewHomeTeam.addGestureRecognizer(onClickHomeTeam)
+        
+        let onClickAwayTeam = UITapGestureRecognizer(target: self, action:  #selector(handleAwayTeam))
+        self.viewAwayTeam.addGestureRecognizer(onClickAwayTeam)
     }
+    
+    
+    @objc func handleAwayTeam() {
+//        print("handleHomeTeam")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "TeamViewController") as?
+            TeamViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+        vc?.url = self.dataMatchesDetail.header?.teams![1].pageUrl
+    }
+    
+    @objc func handleHomeTeam() {
+        print("handleHomeTeam")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "TeamViewController") as?
+            TeamViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+        vc?.url = self.dataMatchesDetail.header?.teams![0].pageUrl
+    }
+    
 }
 
 // collection View
@@ -157,7 +184,7 @@ extension ResultMatchDetailViewController {
                         // call API LiveTicker
                         if let url = self!.dataMatchesDetail.content?.liveticker?.url {
                             self!.fetchDataLiveticker(url: "https://" + url)
-                            print("contentMatch.stats",self!.dataMatchesDetail.content!.stats?.stats![0].titleType)
+//                            print("contentMatch.stats",self!.dataMatchesDetail.content!.stats?.stats![0].titleType)
                         }
                         DispatchQueue.main.async {
                             self!.fillMatchesDetailData()
