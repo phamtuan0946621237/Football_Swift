@@ -11,12 +11,13 @@ class TransfersTeamViewController: UIViewController, UITableViewDataSource, UITa
     var dataTransfer : [TransferItem] = []
     @IBOutlet weak var tableView: UITableView!
     var idTeam : Int?
+    var nameClub : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ListTransferTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ListTransferTableViewCell")
-        self.dataAPI(url: "aflemf")
+        self.dataAPI(id: String(idTeam!), nameTeam: nameClub!)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -128,9 +129,12 @@ class TransfersTeamViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
     
-    func dataAPI(url : String) {
+    func dataAPI(id : String,nameTeam : String) {
+//        let service = Connect()
+//        service.getAPIUrl(url: "https://www.fotmob.com/teams?id=8634&tab=transfers&type=team&timeZone=Asia%2FSaigon&seo=barcelona")
+        let parameters : [String : Any]? = ["id" : id,"tab" : "transfers","type" : "team","timeZone" : "Asia%2FSaigon","seo" : nameTeam]
         let service = Connect()
-        service.getAPIUrl(url: "https://www.fotmob.com/teams?id=8634&tab=transfers&type=team&timeZone=Asia%2FSaigon&seo=barcelona")
+        service.fetchGet(endPoint: "teams",parram :parameters)
         service.completionHandler {
             [weak self] (data) in
             if(data != nil) {

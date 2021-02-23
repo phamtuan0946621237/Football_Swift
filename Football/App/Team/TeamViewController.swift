@@ -8,31 +8,69 @@
 import UIKit
 
 class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
-    
+    // variable
     @IBOutlet weak var nameTeam: UILabel!
     @IBOutlet weak var nameLeague: UILabel!
-    
     @IBOutlet weak var imageTeam: UIImageView!
+    var dataTable : [TableTeamLeagueItem] = []
     var fixtureData : [FixTuresDataModel] = []
     var newsData : [NewsItem] = []
     var url : String! = nil
-//    var teamData : TeamModelItemData?
     var arrHeader : [String] = []
     var detailDataTeam : DetailTeamModelItemData?
     @IBOutlet weak var tableView: UITableView!
+    var idTeam : Int = 0
+    var nameClub : String?
+    
+    // life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataAPI(url: self.url)
         tableView.delegate = self
         tableView.dataSource = self
-        
-        // Do any additional setup after loading the view.
+        DispatchQueue.global().async { [weak self] in
+            self!.getInfoTeam()
+            DispatchQueue.main.async {
+                self!.dataAPI(id: String(self!.idTeam), nameTeam: self!.nameClub!)
+            }
+        }
     }
     
-    func dataAPI(url : String) {
+    // get info team
+    func getInfoTeam() {
+        let dateAsString = url
+        let start = dateAsString!.index(dateAsString!.startIndex, offsetBy: 7)
+        let end = dateAsString!.index(dateAsString!.endIndex, offsetBy: 0)
+        let range = start..<end
+        let month = dateAsString![range]
+        let a = month.prefix(5)
+        let b = month.prefix(6)
+        let indexChuChuoiCungcuaA = a.index(before: a.endIndex)
+        let indexChuChuoiCungcuaB = b.index(before: b.endIndex)
+        if a[indexChuChuoiCungcuaA] == "/" {
+            let id = month.prefix(4)
+            self.idTeam = Int(id)!
+        }else {
+            let id = month.prefix(5)
+            self.idTeam = Int(id)!
+        }
+        if let index = month.lastIndex(of: "/") {
+            let z = month.suffix(from: index)
+            let aaaaaa = z.index(z.endIndex, offsetBy: -z.count + 1)
+            let nameClub = z.suffix(from: aaaaaa)
+            self.nameClub = String(nameClub)
+            
+        }
+    }
+}
+
+
+
+// call API
+extension TeamViewController {
+    func dataAPI(id : String,nameTeam : String) {
+        let parameters : [String : Any]? = ["id" : id,"tab" : "overview","type" : "team","timeZone" : "Asia%2FSaigon","seo" : nameTeam]
         let service = Connect()
-        service.getAPIUrl(url: "https://www.fotmob.com/teams?id=8634&tab=overview&type=team&timeZone=Asia%2FSaigon&seo=barcelona")
+        service.fetchGet(endPoint: "teams",parram :parameters)
         service.completionHandler {
             [weak self] (data) in
             if(data != nil) {
@@ -46,11 +84,44 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                         self!.detailDataTeam = detailTeamData
                         
                     }
+                    var arr : [String] = []
                     if let tabData = data!["tabs"] as? [String] {
                         for dataTabObj in tabData {
-                            self!.arrHeader.append(dataTabObj)
+                            arr.append(dataTabObj)
+                            
                         }
-                        print("arrHeader",self!.arrHeader)
+                        arr.remove(at: 0)
+                        self!.arrHeader = arr
+                    }
+                    var arrTableData : [TableTeamLeagueItem] = []
+                    if let tableArr = data!["tableData"] as? [String : Any] {
+                        if let tables = tableArr["tables"] as? [[String : Any]] {
+//                            let table = tables[0]
+                            for tablesObj in tables {
+                                if let tableData = tablesObj["table"] as? [[String : Any]] {
+                                    for tableObj in tableData {
+                                        let dataTableItem = TableTeamLeagueItem()
+                                        dataTableItem.draws = tableObj["draws"] as? Int
+                                        dataTableItem.goalConDiff = tableObj["goalConDiff"] as? Int
+                                        dataTableItem.idTeam = tableObj["idTeam"] as? Int
+                                        dataTableItem.idx = tableObj["idx"] as? Int
+                                        dataTableItem.losses = tableObj["losses"] as? Int
+                                        dataTableItem.name = tableObj["name"] as? String
+                                        dataTableItem.pageUrl = tableObj["pageUrl"] as? String
+                                        dataTableItem.played = tableObj["played"] as? Int
+                                        dataTableItem.pts = tableObj["pts"] as? Int
+                                        dataTableItem.qualColor = tableObj["qualColor"] as? String
+                                        dataTableItem.scoresStr = tableObj["scoresStr"] as? String
+                                        dataTableItem.wins = tableObj["wins"] as? Int
+                                        
+                                        arrTableData.append(dataTableItem)
+                                    }
+                                    self!.dataTable = arrTableData
+                                }
+                            }
+//                            print("hellooo",table)
+                            
+                        }
                     }
                     var fixturesData : [FixTuresDataModel] = []
                     if let fixtureArr = data!["fixtures"] as? [[String : Any]] {
@@ -87,10 +158,7 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                             fixturesData.append(fixtureItem)
                         }
                         self?.fixtureData = fixturesData
-//                        print("self?.fixtureData",self?.fixtureData[0].away?.name)
-//                        print("self?.fixtureData",self?.fixtureData[0].home?.name)
                     }
-                    
                     
                     var newsArr : [NewsItem] = []
                     if let newsData = data!["news"] as? [[String : Any]] {
@@ -113,7 +181,6 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     
                     DispatchQueue.main.async {
                         self!.tableView.reloadData()
-                        print("self.detailDataTeam",self!.detailDataTeam?.name)
                         self?.nameTeam.text = self!.detailDataTeam?.name
                         self?.nameLeague.text  = self?.detailDataTeam?.country
                         self?.imageTeam.sd_setImage(with: URL(string: "https://www.fotmob.com/images/team/\(String((self?.detailDataTeam?.idTeam)!))"), completed: nil)
@@ -122,7 +189,10 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             }
         }
     }
-    
+}
+
+ // tableView
+extension TeamViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrHeader.count
     }
@@ -139,19 +209,26 @@ class TeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 FixtureTeamViewController
             self.navigationController?.pushViewController(vc!, animated: true)
             vc?.fixtureData = self.fixtureData
-            vc?.idTeam = 8634
+            vc?.idTeam = self.idTeam
         }else if arrHeader[indexPath.row] == "Transfers" {
             let vc = storyboard?.instantiateViewController(withIdentifier: "TransfersTeamViewController") as?
                 TransfersTeamViewController
             self.navigationController?.pushViewController(vc!, animated: true)
-            vc?.idTeam = 8634
+            print("self.idTeam",self.idTeam)
+            vc?.idTeam = self.idTeam
+            vc?.nameClub = self.nameClub
+        }else if arrHeader[indexPath.row] == "Table" {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "TableinternalLeagueTeamViewController") as?
+                TableinternalLeagueTeamViewController
+            self.navigationController?.pushViewController(vc!, animated: true)
+            vc?.dataTable = self.dataTable
         }else {
+//            TableinternalLeagueTeamViewController
             let vc = storyboard?.instantiateViewController(withIdentifier: "NewsTeamViewController") as?
                 NewsTeamViewController
             self.navigationController?.pushViewController(vc!, animated: true)
-            
+            print("self.idTeam",self.idTeam)
             vc?.newsData = self.newsData
         }
-//
     }
 }
